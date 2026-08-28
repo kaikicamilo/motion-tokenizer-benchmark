@@ -1,0 +1,7 @@
+# RVQ, 4 stages, one codebook each.
+_base_: base.yaml
+exp:
+  name: 'bench_rvq_independent4_snapmogen'
+quantizer:
+  type: 'rvq_independent'
+  num_stages: 4

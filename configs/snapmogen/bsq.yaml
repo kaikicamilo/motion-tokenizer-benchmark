@@ -1,0 +1,23 @@
+# BSQ. l2norm_input is required to avoid collapse with this backbone.
+_base_: base.yaml
+exp:
+  name: 'bench_bsq_snapmogen'
+quantizer:
+  type: 'bsq'
+  embed_dim: 11
+  group_size: 11
+  beta: 0.0
+  gamma_0: 1.0
+  gamma_1: 1.0
+  inv_temperature: 100.0
+  # Normalize v -> v/|v| onto the sphere before sign(), as in the paper.
+  # Required here: with False (the official module, which relies on the
+  # surrounding ViT pipeline for normalization) BSQ collapsed on this backbone
+  # (perplexity 773 -> 4). With True it stabilizes around 1580/2048.
+  l2norm_input: true
+
+training:
+  # As for LFQ, the trainer's loss_commit slot carries BSQ's own loss
+  # (entropy_penalty, already scaled). 1.0 keeps it at BSQ's native magnitude
+  # instead of damping it 50x with the inherited 0.02.
+  lambda_commit: 1.0

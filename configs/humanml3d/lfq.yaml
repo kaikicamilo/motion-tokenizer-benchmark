@@ -1,0 +1,12 @@
+# LFQ on HumanML3D — see configs/lfq.yaml (collapses; reported as a finding).
+_base_: base.yaml
+exp:
+  name: 'bench_lfq_hml'
+quantizer:
+  type: 'lfq'
+  codebook_size: 2048
+  entropy_loss_weight: 0.1
+  diversity_gamma: 1.0
+  inv_temperature: 100.0
+training:
+  lambda_commit: 1.0

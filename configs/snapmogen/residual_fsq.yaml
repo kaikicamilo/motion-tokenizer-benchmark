@@ -1,0 +1,9 @@
+# Residual FSQ, 6 stages.
+_base_: base.yaml
+exp:
+  name: 'bench_residual_fsq_snapmogen'
+quantizer:
+  type: 'residual_fsq'
+  levels: [8, 8, 8, 4]     # per-stage vocabulary = 2048
+  num_quantizers: 6        # matches the 6-stage RVQ
+  # scales/nb_code/mu/quant_resi inherited from base are ignored (no learned codebook).

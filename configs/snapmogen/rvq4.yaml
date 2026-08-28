@@ -1,0 +1,6 @@
+# Shared-codebook RVQ, 4 stages.
+_base_: base.yaml
+exp:
+  name: 'bench_rvq4_snapmogen'
+quantizer:
+  scales: [1, 1, 1, 1]

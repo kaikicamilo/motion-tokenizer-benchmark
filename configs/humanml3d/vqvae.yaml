@@ -1,0 +1,6 @@
+# Plain VQ-VAE on HumanML3D.
+_base_: base.yaml
+exp:
+  name: 'bench_vqvae_hml'
+quantizer:
+  scales: [1]

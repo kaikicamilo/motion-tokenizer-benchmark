@@ -1,0 +1,8 @@
+# RVQ, 6 stages, one codebook each.
+_base_: base.yaml
+exp:
+  name: 'bench_rvq_independent_snapmogen'
+quantizer:
+  type: 'rvq_independent'
+  num_stages: 6        # matches shared RVQ (scales=[1x6]) to isolate codebook sharing
+  # nb_code, code_dim, mu inherited from base; `scales` is ignored by this type

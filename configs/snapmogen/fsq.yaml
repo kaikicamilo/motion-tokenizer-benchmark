@@ -1,0 +1,8 @@
+# FSQ. levels product = 2048, matching nb_code.
+_base_: base.yaml
+exp:
+  name: 'bench_fsq_snapmogen'
+quantizer:
+  type: 'fsq'          # selects FSQMotionQuantizer in rvq_model
+  levels: [8, 8, 8, 4] # product = 2048
+  # scales/nb_code/mu/quant_resi inherited from base are ignored (no codebook).

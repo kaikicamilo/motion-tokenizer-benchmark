@@ -1,0 +1,6 @@
+# Shared-codebook RVQ, 6 stages, on HumanML3D.
+_base_: base.yaml
+exp:
+  name: 'bench_rvq_hml'
+quantizer:
+  scales: [1, 1, 1, 1, 1, 1]

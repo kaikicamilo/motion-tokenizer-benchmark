@@ -1,0 +1,20 @@
+# LFQ. Collapses under this backbone at every setting we tried.
+_base_: base.yaml
+exp:
+  name: 'bench_lfq_snapmogen'
+quantizer:
+  type: 'lfq'
+  codebook_size: 2048        # 2^11, matches VQ nb_code
+  entropy_loss_weight: 0.1   # library default
+  diversity_gamma: 1.0       # library default
+  inv_temperature: 100.0     # library default
+  # scales/nb_code/mu/quant_resi inherited from base are ignored.
+
+training:
+  # lambda_commit is deliberately overloaded here: for LFQ the trainer's
+  # loss_commit slot carries entropy_aux_loss, already weighted internally by
+  # entropy_loss_weight=0.1. Keeping the inherited 0.02 would give an effective
+  # entropy weight of 0.002 and all but disable the regularizer. 1.0 restores
+  # LFQ's own default. Other methods keep 0.02, where loss_commit is a real
+  # commitment loss.
+  lambda_commit: 1.0

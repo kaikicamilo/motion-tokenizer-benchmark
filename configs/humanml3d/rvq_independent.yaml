@@ -1,0 +1,7 @@
+# Canonical RVQ (independent codebooks), 6 stages, on HumanML3D.
+_base_: base.yaml
+exp:
+  name: 'bench_rvq_independent_hml'
+quantizer:
+  type: 'rvq_independent'
+  num_stages: 6

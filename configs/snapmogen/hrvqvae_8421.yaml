@@ -1,0 +1,6 @@
+# MS-RVQ, 4 scales.
+_base_: base.yaml
+exp:
+  name: 'bench_hrvqvae_8421_snapmogen'
+quantizer:
+  scales: [8, 4, 2, 1]

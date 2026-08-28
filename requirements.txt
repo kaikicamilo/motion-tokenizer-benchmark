@@ -1,0 +1,11 @@
+torch>=2.0
+numpy
+einops
+vector-quantize-pytorch
+transformers          # T5 text encoder of the SnapMoGen evaluator
+tqdm
+matplotlib
+tensorboard
+wandb                 # optional; set WANDB_DISABLED=1 to skip
+pyyaml
+easydict

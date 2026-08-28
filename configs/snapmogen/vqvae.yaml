@@ -1,0 +1,6 @@
+# Single-stage VQ-VAE.
+_base_: base.yaml
+exp:
+  name: 'bench_vqvae_snapmogen'
+quantizer:
+  scales: [1]

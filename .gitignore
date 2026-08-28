@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+
+# runtime workspace (datasets, evaluator weights, checkpoints, logs) — see README
+/data
+/checkpoint_dir
+/glove
+/log
+/logs
+/wandb
+*.tar
+*.log
+
+# generated results (regenerate with scripts/collect_metrics.py, eval_*.py)
+metrics_*.csv
+variance_*.json
+training_times_*.csv

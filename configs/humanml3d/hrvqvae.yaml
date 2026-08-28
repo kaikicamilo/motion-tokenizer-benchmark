@@ -1,0 +1,6 @@
+# HRVQ scales=[2,1] on HumanML3D.
+_base_: base.yaml
+exp:
+  name: 'bench_hrvqvae_hml'
+quantizer:
+  scales: [2, 1]

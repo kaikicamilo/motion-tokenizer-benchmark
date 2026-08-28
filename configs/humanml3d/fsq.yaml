@@ -1,0 +1,7 @@
+# FSQ on HumanML3D — see configs/fsq.yaml.
+_base_: base.yaml
+exp:
+  name: 'bench_fsq_hml'
+quantizer:
+  type: 'fsq'
+  levels: [8, 8, 8, 4]
