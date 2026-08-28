@@ -9,7 +9,7 @@ convolutional autoencoder, ~23.6M parameters), the same 2048-state per-stage
 vocabulary and the same training recipe; only the quantizer changes.
 
 This repository contains **code only**. Datasets, evaluator weights,
-checkpoints and result tables are not included — the paper's numbers are
+checkpoints and result tables are not included, the paper's numbers are
 reproduced by running the scripts below.
 
 ## Layout
